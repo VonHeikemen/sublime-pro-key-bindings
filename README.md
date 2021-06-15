@@ -87,7 +87,7 @@ Anyway, once your ready, search the command `Sublime Programatic Key Bindings - 
 
 ### Create your own command
 
-If you want to manage your primary keymap, the one in the root your of your user folder, you need to create a new command.
+If you want to manage your primary keymap, the one in the root of your user folder, you need to create a new command.
 
 First, create a file called `Default.sublime-commands`. In there you can your custom command.
 
