@@ -28,7 +28,7 @@ def keybinding(bind, **kwargs):
 overlay_visible = {
   "key": "overlay_visible",
   "operator": "equal",
-  "operand": true
+  "operand": True
 }
 ```
 
@@ -105,6 +105,30 @@ First, create a file called `Default.sublime-commands`. In there you can your cu
 ```
 
 Now your ready. Make sure `keybindings.py` exists and has the code you need. Search in the command palette `Update root key bindings`, run it and enjoy.
+
+## User binding API
+
+*A.K.A keybindings.py*, the only thing you need there is the `keybinding` function.
+
+### Function `bind`
+
+```
+bind(<keys>, <command>, ...[context], **kwargs)
+```
+
+The first argument is an array of keys you want to bind.
+
+The second argument is the command you want to run. This could be a string or an array of commands. This plugin allows you to bind a sequence of commands if you pass an array, but since this isn't a built-in feature of sublime you need to use the helper function provided in `kwargs`, which is called `command`.
+
+```
+command(<name>, **kwargs)
+```
+
+`command` takes the name of the command as the first argument, and rest of the keyword arguments will be the arguments to the command you want to run.
+
+Going back to `bind`. The first and second arguments are required, the rest of the positional arguments can be ["context objects"](https://www.sublimetext.com/docs/key_bindings.html#context).
+
+If your command is not a sequence, the keyword arguments of `bind` will become the arguments to the command you want to run.
 
 ## Support
 
