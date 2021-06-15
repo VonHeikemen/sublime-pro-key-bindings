@@ -20,7 +20,7 @@ def keybinding(bind, **kwargs):
   # Plugin: Origami
   bind([prefix_origami], "noop") # Disable the default behavior of ctrl+w
   bind([prefix_origami, "q"], "close")
-  bind([prefix_origami], "c", "destroy_pane", direction="self")
+  bind([prefix_origami, "c"], "destroy_pane", direction="self")
 
 
 
