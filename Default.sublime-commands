@@ -1,0 +1,10 @@
+[
+  {
+    "caption": "Sublime Programatic Key Bindings - Compile Default",
+    "command": "spk_key_binding",
+    "args": {
+      "bindings": "$packages/User/SublimeProKeyBindings/keybindings.py",
+      "destination": "$packages/User/SublimeProKeyBindings/Default ($platform).sublime-keymap"
+    }
+  }
+]
