@@ -1,9 +1,27 @@
-from importlib.machinery import SourceFileLoader
+import platform
 import os
 import json
 
 import sublime
 import sublime_plugin
+
+if platform.python_version() == '3.3.6':
+  from importlib.machinery import SourceFileLoader
+
+  def run_module(module_name, user_bindings, **kwargs):
+    user_module = SourceFileLoader(module_name, user_bindings).load_module()
+    user_module.keybinding(kwargs.get('key'), command=kwargs.get('command'))
+
+else:
+  import importlib.util
+
+  def run_module(module_name, user_bindings, **kwargs):
+    spec = importlib.util.spec_from_file_location(module_name, user_bindings)
+    user_module = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(user_module)
+
+    user_module.keybinding(kwargs.get('key'), command=kwargs.get('command'))
+
 
 class SpkKeyBinding(sublime_plugin.ApplicationCommand):
   def __init__(self):
@@ -22,9 +40,7 @@ class SpkKeyBinding(sublime_plugin.ApplicationCommand):
       return
 
     try:
-      user_module = SourceFileLoader(self.module, user_bindings).load_module()
-
-      user_module.keybinding(self.key, command=self.command)
+      run_module(self.module, user_bindings, key=self.key, command=self.command)
     except Exception as err:
       sublime.error_message("Something went wrong.\nCheck out sublime console to see more information")
       raise err
