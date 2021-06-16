@@ -42,7 +42,8 @@ Install `SublimeProKeyBindings` via Package Control.
 1. Open the Command Palette via <kbd>Ctrl</kbd>/<kbd>⌘</kbd>+<kbd>Shift</kbd>+<kbd>p</kbd>
 2. Select *Package Control: Add Repository*
 3. Copy the link of this repository on the input
-4. Search for `SublimeProKeyBindings` and press <kbd>↲ Enter</kbd>
+4. Open the Command Palette again, then select *Package Control: Install Package*
+5. Search for `SublimeProKeyBindings` and press <kbd>↲ Enter</kbd>
 
 #### Manual
 
