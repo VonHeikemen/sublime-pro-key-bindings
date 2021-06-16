@@ -1,4 +1,4 @@
-# Sublime Text's Programatic Key Bindings
+# Sublime Text Programatic Key Bindings
 
 Use the full power of python to declare your key bindings.
 
