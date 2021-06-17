@@ -29,9 +29,10 @@ class SpkKeyBinding(sublime_plugin.ApplicationCommand):
     self.dest = '$packages/User/SublimeProKeyBindings/Default ($platform).sublime-keymap'
 
     self.module = 'spk_user_bindings'
-    self.bindings = []
 
   def run(self, **kwargs):
+    self.bindings = []
+
     user_bindings = format(kwargs.get('bindings', self.path))
     dest = format(kwargs.get('destination', self.dest))
 
