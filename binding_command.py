@@ -44,6 +44,7 @@ class SpkKeyBinding(sublime_plugin.ApplicationCommand):
       run_module(self.module, user_bindings, key=self.key, command=self.command)
     except Exception as err:
       sublime.error_message("Something went wrong.\nCheck out sublime console to see more information")
+      self.bindings = []
       raise err
 
     if len(self.bindings) == 0:
@@ -52,6 +53,7 @@ class SpkKeyBinding(sublime_plugin.ApplicationCommand):
 
     with open(dest, 'w') as file:
       json.dump(self.bindings, file, indent=2)
+      self.bindings = []
       sublime.message_dialog("Key bindings updated")
 
   def key(self, keys, command, *context, **args):
