@@ -117,6 +117,8 @@ class SpkMultiCmd(sublime_plugin.TextCommand):
     if len(commands) == 0:
       return
 
+    window = self.view.window()
+
     for cmd in commands:
       name = cmd.get('command', "")
       args = cmd.get('args', None)
@@ -125,9 +127,9 @@ class SpkMultiCmd(sublime_plugin.TextCommand):
         return
 
       if args is None:
-        self.view.run_command(name)
+        window.run_command(name)
       else:
-        self.view.run_command(name, args)
+        window.run_command(name, args)
 
 def format(string):
   return sublime.expand_variables(string, sublime.active_window().extract_variables())
