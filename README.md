@@ -1,4 +1,4 @@
-# Sublime Text Programatic Key Bindings
+# Sublime Text Programmatic Key Bindings
 
 Use the full power of python to declare your key bindings.
 
@@ -59,7 +59,7 @@ This plugin only adds one command to sublime text:
 ```json
 [
   {
-    "caption": "Sublime Programatic Key Bindings - Compile Default",
+    "caption": "Sublime Programmatic Key Bindings - Compile Default",
     "command": "spk_key_binding",
     "args": {
       "bindings": "$packages/User/SublimeProKeyBindings/keybindings.py",
@@ -84,7 +84,7 @@ After this function is executed a `.sublime-keymap` will be created in the direc
 
 That means, this plugin doesn't do anything at runtime. After the `.sublime-keymap` is created everything is in the hands of sublime's internal mechanism.
 
-Anyway, once your ready, search the command `Sublime Programatic Key Bindings - Compile Default` in the command palette and run it.
+Anyway, once your ready, search the command `Sublime Programmatic Key Bindings - Compile Default` in the command palette and run it.
 
 ### Create your own command
 
