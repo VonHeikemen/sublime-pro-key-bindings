@@ -35,19 +35,17 @@ overlay_visible = {
 ## Getting Started
 
 ### Installation
-#### Recommended (for now, 'cause is not in Package control's repository)
+#### Recommended
 
-Install `SublimeProKeyBindings` via Package Control.
+Install `Programmatic Key Bindings` via Package Control.
 
 1. Open the Command Palette via <kbd>Ctrl</kbd>/<kbd>⌘</kbd>+<kbd>Shift</kbd>+<kbd>p</kbd>
-2. Select *Package Control: Add Repository*
-3. Copy the link of this repository on the input
-4. Open the Command Palette again, then select *Package Control: Install Package*
-5. Search for `SublimeProKeyBindings` and press <kbd>↲ Enter</kbd>
+2. Then select *Package Control: Install Package*
+3. Search for `Programmatic Key Bindings` and press <kbd>↲ Enter</kbd>
 
 #### Manual
 
-1. Clone or download this repository, (re)name the folder to `SublimeProKeyBindings` if necessary.
+1. Clone or download this repository, (re)name the folder to `Programmatic Key Bindings` if necessary.
 2. Move the folder inside your sublime `/Packages`. (*Preferences > Browse Packages...*)
 
 ## Usage
@@ -62,8 +60,8 @@ This plugin only adds one command to sublime text:
     "caption": "Sublime Programmatic Key Bindings - Compile Default",
     "command": "spk_key_binding",
     "args": {
-      "bindings": "$packages/User/SublimeProKeyBindings/keybindings.py",
-      "destination": "$packages/User/SublimeProKeyBindings/Default ($platform).sublime-keymap"
+      "bindings": "$packages/User/Programmatic Key Bindings/keybindings.py",
+      "destination": "$packages/User/Programmatic Key Bindings/Default ($platform).sublime-keymap"
     }
   }
 ]
@@ -80,7 +78,7 @@ def keybinding(bind, **kwargs):
   # Your code...
 ```
 
-After this function is executed a `.sublime-keymap` will be created in the directory `SublimeProKeyBindings` located in your "user folder". Sublime text will pick up any changes to that file and will reload your key bindings so the changes take effect (and you should be able to use then inmediately, reset sublime if you want to be sure).
+After this function is executed a `.sublime-keymap` will be created in the directory `Programmatic Key Bindings` located in your "user folder". Sublime text will pick up any changes to that file and will reload your key bindings so the changes take effect (and you should be able to use then inmediately, reset sublime if you want to be sure).
 
 That means, this plugin doesn't do anything at runtime. After the `.sublime-keymap` is created everything is in the hands of sublime's internal mechanism.
 
@@ -90,7 +88,7 @@ Anyway, once your ready, search the command `Sublime Programmatic Key Bindings -
 
 If you want to manage your primary keymap, the one in the root of your user folder, you need to create a new command.
 
-First, create a file called `Default.sublime-commands`. In there you can your custom command.
+First, create a file called `Default.sublime-commands` (in your user folder). In there you can your custom command.
 
 ```json
 [
